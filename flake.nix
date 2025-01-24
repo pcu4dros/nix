@@ -19,11 +19,13 @@
         [ 
          pkgs.fzf
 	 pkgs.git 
+	 pkgs.gnupg
 	 pkgs.go
 	 pkgs.neovim
 	 pkgs.nodejs_23
 	 pkgs.obsidian
 	 pkgs.oh-my-zsh
+	 pkgs.pinentry_mac
 	 pkgs.python313
 	 pkgs.typescript
 	 pkgs.zsh-powerlevel10k
