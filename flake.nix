@@ -18,7 +18,10 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ 
-         pkgs.fzf
+         pkgs.colima
+	 pkgs.docker
+	 pkgs.docker-compose
+	 pkgs.fzf
 	 pkgs.git 
 	 pkgs.gnupg
 	 pkgs.go
