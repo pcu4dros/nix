@@ -73,7 +73,7 @@
 	  nix-homebrew = {
 	    enable = true;
 	    # Apple Silicon stuff
-	    enableRosetta = true;
+	    # enableRosetta = true;
 	    # User owning the homebrew prefix
 	    user = "pcu4dros";
 	  };
