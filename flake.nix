@@ -35,7 +35,7 @@
 	 pkgs.zsh-powerlevel10k
         ];
       
-      # Homebrew packages that are not yet created as nix packages
+      # Homebrew packages that have not yet been created as Nix packages
       homebrew = {
         enable = true;
 	casks = [
