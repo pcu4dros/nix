@@ -39,6 +39,7 @@
       homebrew = {
         enable = true;
 	casks = [
+	  "ghostty"
 	  "zen-browser"
 	  "iina"
 	];
