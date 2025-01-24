@@ -5,9 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
   let
     configuration = { pkgs, ... }: {
       # Allow no-opensource apps to be installed
@@ -30,6 +31,18 @@
 	 pkgs.typescript
 	 pkgs.zsh-powerlevel10k
         ];
+      
+      # Homebrew packages that are not yet created as nix packages
+      homebrew = {
+        enable = true;
+	casks = [
+	  "zen-browser"
+	  "iina"
+	];
+	onActivation.cleanup = "zap";
+	onActivation.autoUpdate = true;
+	onActivation.upgrade = true;
+      };
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
@@ -53,7 +66,19 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."mini" = nix-darwin.lib.darwinSystem {
-      modules = [ configuration ];
+      modules = [ 
+        configuration
+	nix-homebrew.darwinModules.nix-homebrew
+	{
+	  nix-homebrew = {
+	    enable = true;
+	    # Apple Silicon stuff
+	    enableRosetta = true;
+	    # User owning the homebrew prefix
+	    user = "pcu4dros";
+	  };
+	}  
+      ];
     };
 
     # Expose the package set, including overlays, for convenience.
