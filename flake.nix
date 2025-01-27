@@ -18,9 +18,10 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ 
-         pkgs.colima
-	 pkgs.docker
-	 pkgs.docker-compose
+	 # Uncomment these three pkgs to enable docker
+         # pkgs.colima
+	 # pkgs.docker
+	 # pkgs.docker-compose
 	 pkgs.fzf
 	 pkgs.git 
 	 pkgs.gnupg
@@ -30,6 +31,8 @@
 	 pkgs.obsidian
 	 pkgs.oh-my-zsh
 	 pkgs.pinentry_mac
+	 pkgs.podman
+	 pkgs.podman-desktop
 	 pkgs.python313
 	 pkgs.typescript
 	 pkgs.zsh-powerlevel10k
