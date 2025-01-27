@@ -26,6 +26,7 @@
 	 pkgs.git 
 	 pkgs.gnupg
 	 pkgs.go
+	 pkgs.lazygit
 	 pkgs.neovim
 	 pkgs.nodejs_23
 	 pkgs.obsidian
