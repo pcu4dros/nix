@@ -21,7 +21,7 @@ nix run nix-darwin --extra-experimental-features "nix-command flakes"
 --switch --flake ~/nix#mini
 ```
 
-## Validate nix-darwin
+## Validate darwin-rebuild command
 
 Type the following command:
 
@@ -38,5 +38,5 @@ If everything has been done correctly, the following path is displayed:
 ## Re-building the configuration
 
 ```bash
-darwin-rebuild switch --flake ~/nix#mini
-``
+darwin-rebuild switch --flake ~/Mi unidad/
+
