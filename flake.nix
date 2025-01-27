@@ -19,7 +19,7 @@
       environment.systemPackages =
         [ 
 	 # Uncomment these three pkgs to enable docker
-         # pkgs.colima
+   # pkgs.colima
 	 # pkgs.docker
 	 # pkgs.docker-compose
 	 pkgs.fzf
@@ -27,6 +27,7 @@
 	 pkgs.gnupg
 	 pkgs.go
 	 pkgs.lazygit
+   pkgs.vimPlugins.LazyVim
 	 pkgs.neovim
 	 pkgs.nodejs_23
 	 pkgs.obsidian
