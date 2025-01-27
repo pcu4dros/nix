@@ -38,5 +38,5 @@ If everything has been done correctly, the following path is displayed:
 ## Re-building the configuration
 
 ```bash
-darwin-rebuild switch --flake ~/Mi unidad/
+darwin-rebuild switch --flake ~/nix#mini
 
