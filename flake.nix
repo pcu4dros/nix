@@ -36,6 +36,7 @@
 	 pkgs.podman
 	 pkgs.podman-desktop
 	 pkgs.python313
+   pkgs.ripgrep
 	 pkgs.typescript
 	 pkgs.zsh-powerlevel10k
         ];
