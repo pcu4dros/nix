@@ -22,6 +22,7 @@
    # pkgs.colima
 	 # pkgs.docker
 	 # pkgs.docker-compose
+   pkgs.fd
 	 pkgs.fzf
 	 pkgs.git 
 	 pkgs.gnupg
@@ -33,8 +34,6 @@
 	 pkgs.obsidian
 	 pkgs.oh-my-zsh
 	 pkgs.pinentry_mac
-	 pkgs.podman
-	 pkgs.podman-desktop
 	 pkgs.python313
    pkgs.ripgrep
 	 pkgs.typescript
