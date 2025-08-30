@@ -19,13 +19,14 @@
       environment.systemPackages =
         [ 
 	 # Uncomment these three pkgs to enable docker
-	 pkgs.docker
-	 pkgs.docker-compose
+	 #pkgs.docker
+	 #pkgs.docker-compose
          pkgs.fd
 	 pkgs.fzf
 	 pkgs.git 
 	 pkgs.gnupg
 	 pkgs.go
+         #pkgs.ghostty
 	 pkgs.lazygit
          pkgs.vimPlugins.LazyVim
 	 pkgs.neovim
@@ -38,20 +39,7 @@
 	 pkgs.typescript
 	 pkgs.zsh-powerlevel10k
         ];
-      
-      # Homebrew packages that have not yet been created as Nix packages
-      homebrew = {
-        enable = false;
-	casks = [
-	  "ghostty"
-	  "zen-browser"
-	  "iina"
-	];
-	onActivation.cleanup = "zap";
-	onActivation.autoUpdate = true;
-	onActivation.upgrade = true;
-      };
-
+               
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
 
@@ -78,10 +66,11 @@
         configuration
 	nix-homebrew.darwinModules.nix-homebrew
 	{
+          # DISABLED: Doesn't work anymore
 	  nix-homebrew = {
-	    enable = true;
+	    enable = false;
 	    # Apple Silicon stuff
-	    enableRosetta = true;
+	    # enableRosetta = true;
 	    # User owning the homebrew prefix
 	    user = "pcu4dros";
 	  };
