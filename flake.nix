@@ -19,30 +19,29 @@
       environment.systemPackages =
         [ 
 	 # Uncomment these three pkgs to enable docker
-   # pkgs.colima
-	 # pkgs.docker
-	 # pkgs.docker-compose
-   pkgs.fd
+	 pkgs.docker
+	 pkgs.docker-compose
+         pkgs.fd
 	 pkgs.fzf
 	 pkgs.git 
 	 pkgs.gnupg
 	 pkgs.go
 	 pkgs.lazygit
-   pkgs.vimPlugins.LazyVim
+         pkgs.vimPlugins.LazyVim
 	 pkgs.neovim
 	 pkgs.nodejs_23
 	 pkgs.obsidian
 	 pkgs.oh-my-zsh
 	 pkgs.pinentry_mac
 	 pkgs.python313
-   pkgs.ripgrep
+         pkgs.ripgrep
 	 pkgs.typescript
 	 pkgs.zsh-powerlevel10k
         ];
       
       # Homebrew packages that have not yet been created as Nix packages
       homebrew = {
-        enable = true;
+        enable = false;
 	casks = [
 	  "ghostty"
 	  "zen-browser"
@@ -82,7 +81,7 @@
 	  nix-homebrew = {
 	    enable = true;
 	    # Apple Silicon stuff
-	    # enableRosetta = true;
+	    enableRosetta = true;
 	    # User owning the homebrew prefix
 	    user = "pcu4dros";
 	  };
